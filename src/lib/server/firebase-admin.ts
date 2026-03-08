@@ -2,6 +2,12 @@ import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
 
+function shouldPreferDefaultCredentials() {
+  // Firebase App Hosting / Cloud Run expose FIREBASE_CONFIG at runtime.
+  // In managed Google runtimes, prefer ADC over explicit private keys.
+  return Boolean(process.env.FIREBASE_CONFIG) && process.env.NODE_ENV !== "development";
+}
+
 function getPrivateKey() {
   const key = process.env.ADMIN_PRIVATE_KEY;
   if (!key) return undefined;
@@ -15,6 +21,10 @@ function getPrivateKey() {
 }
 
 export function hasFirebaseAdminConfig() {
+  if (shouldPreferDefaultCredentials()) {
+    return false;
+  }
+
   return Boolean(
     process.env.ADMIN_PROJECT_ID &&
     process.env.ADMIN_CLIENT_EMAIL &&
