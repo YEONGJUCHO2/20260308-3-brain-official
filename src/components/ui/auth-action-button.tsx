@@ -30,7 +30,8 @@ function getAuthErrorMessage(error: unknown, isLogout: boolean) {
     return "로그인 팝업이 닫혀 로그인을 완료하지 못했습니다.";
   }
 
-  return "로그인에 실패했습니다. 팝업 차단이나 Firebase 인증 설정을 확인해 주세요.";
+  const errorMessage = (error as { message?: string })?.message || "알 수 없는 오류";
+  return `로그인에 실패했습니다.\n사유: ${code || errorMessage}\n팝업 차단이나 Firebase 인증 설정을 확인해 주세요.`;
 }
 
 export function AuthActionButton() {
