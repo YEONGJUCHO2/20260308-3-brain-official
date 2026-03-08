@@ -20,7 +20,9 @@ type UsageKind = "step1" | "step2";
 const usageMemory = new Map<string, DailyUsageRecord>();
 
 function usageLimitsDisabled() {
-  return process.env.DISABLE_USAGE_LIMITS === "true";
+  // Temporary override during active product debugging.
+  // Re-enable once the onboarding flow is verified in production.
+  return true;
 }
 
 export class UsageLimitExceededError extends Error {
