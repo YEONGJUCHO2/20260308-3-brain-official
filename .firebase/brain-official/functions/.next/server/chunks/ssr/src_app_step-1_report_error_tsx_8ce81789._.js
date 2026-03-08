@@ -1,0 +1,3 @@
+module.exports=[80738,a=>{"use strict";var b=a.i(87924);function c(){return(0,b.jsx)("div",{className:"brain-page flex min-h-screen items-center justify-center px-6",children:(0,b.jsxs)("div",{className:"brain-card p-8 text-center",children:[(0,b.jsx)("p",{className:"text-xl font-black tracking-[-0.03em]",children:"전체 리포트 오류"}),(0,b.jsx)("p",{className:"mt-3 text-sm leading-6 text-[var(--muted)]",children:"리포트를 불러오는 중 문제가 생겼습니다."})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_app_step-1_report_error_tsx_8ce81789._.js.map

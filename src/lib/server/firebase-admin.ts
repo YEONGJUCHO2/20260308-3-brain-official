@@ -3,15 +3,15 @@ import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
 
 function getPrivateKey() {
-  const key = process.env.FIREBASE_PRIVATE_KEY;
+  const key = process.env.ADMIN_PRIVATE_KEY;
   return key?.replace(/\\n/g, "\n");
 }
 
 export function hasFirebaseAdminConfig() {
   return Boolean(
-    process.env.FIREBASE_PROJECT_ID &&
-      process.env.FIREBASE_CLIENT_EMAIL &&
-      process.env.FIREBASE_PRIVATE_KEY,
+    process.env.ADMIN_PROJECT_ID &&
+    process.env.ADMIN_CLIENT_EMAIL &&
+    process.env.ADMIN_PRIVATE_KEY,
   );
 }
 
@@ -26,8 +26,8 @@ export function getFirebaseAdminApp() {
 
   return initializeApp({
     credential: cert({
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      projectId: process.env.ADMIN_PROJECT_ID,
+      clientEmail: process.env.ADMIN_CLIENT_EMAIL,
       privateKey: getPrivateKey(),
     }),
   });

@@ -36,11 +36,12 @@ export async function generateGeminiJson<T>({
   }
 
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-goog-api-key": apiKey,
       },
       body: JSON.stringify({
         systemInstruction: {
@@ -62,7 +63,8 @@ export async function generateGeminiJson<T>({
 
   if (!response.ok) {
     const body = await response.text();
-    throw new Error(`Gemini API 요청 실패: ${response.status} ${body}`);
+    console.error(`Gemini API error [${source}]: ${response.status}`, body);
+    throw new Error(`AI 응답 생성에 실패했습니다. (${response.status})`);
   }
 
   try {

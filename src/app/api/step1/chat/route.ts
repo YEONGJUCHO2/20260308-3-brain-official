@@ -8,11 +8,30 @@ import {
   recordUsage,
   UsageLimitExceededError,
 } from "@/lib/server/usage-limits";
-import type { Step1ChatRequest, Step1ChatResponse } from "@/types/step1";
+import type { Step1ChatResponse } from "@/types/step1";
+
+function parseStep1ChatPayload(body: unknown) {
+  if (!body || typeof body !== "object") return null;
+  const record = body as Record<string, unknown>;
+
+  const session_id =
+    typeof record.session_id === "string" ? record.session_id.slice(0, 128) : undefined;
+  const selected_option_id =
+    typeof record.selected_option_id === "string" ? record.selected_option_id.slice(0, 128) : undefined;
+  const input_text =
+    typeof record.input_text === "string" ? record.input_text.slice(0, 2000) : undefined;
+
+  return { session_id, selected_option_id, input_text };
+}
 
 export async function POST(request: Request) {
   try {
-    const payload = (await request.json().catch(() => ({}))) as Step1ChatRequest;
+    const raw: unknown = await request.json().catch(() => null);
+    const payload = parseStep1ChatPayload(raw);
+    if (!payload) {
+      return NextResponse.json({ message: "유효한 요청 형식이 아닙니다." }, { status: 400 });
+    }
+
     const existingSession = payload.session_id ? await getSessionRecord(payload.session_id) : null;
 
     if (!existingSession) {
@@ -26,12 +45,13 @@ export async function POST(request: Request) {
     const response: Step1ChatResponse = await runStep1Chat(payload);
     return NextResponse.json(response);
   } catch (error) {
+    if (error instanceof UsageLimitExceededError) {
+      return NextResponse.json({ message: error.message }, { status: error.statusCode });
+    }
+    console.error("Step 1 chat error:", error);
     return NextResponse.json(
-      {
-        message:
-          error instanceof Error ? error.message : "Step 1 세션을 처리하지 못했습니다.",
-      },
-      { status: error instanceof UsageLimitExceededError ? error.statusCode : 400 },
+      { message: "Step 1 세션을 처리하지 못했습니다." },
+      { status: 400 },
     );
   }
 }

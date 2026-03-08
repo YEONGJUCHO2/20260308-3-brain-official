@@ -1,0 +1,3 @@
+module.exports=[29503,a=>{"use strict";var b=a.i(87924);function c(){return(0,b.jsx)("div",{className:"brain-page flex min-h-screen items-center justify-center px-6",children:(0,b.jsxs)("div",{className:"brain-card p-8 text-center",children:[(0,b.jsx)("p",{className:"text-xl font-black tracking-[-0.03em]",children:"Step 1 화면 오류"}),(0,b.jsx)("p",{className:"mt-3 text-sm leading-6 text-[var(--muted)]",children:"화면을 다시 열어도 문제가 계속되면 진단을 처음부터 시작해 주세요."})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_app_step-1_chat_error_tsx_45468985._.js.map

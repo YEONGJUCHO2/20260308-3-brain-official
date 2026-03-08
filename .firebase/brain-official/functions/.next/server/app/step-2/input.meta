@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/step-2/layout,_N_T_/step-2/input/layout,_N_T_/step-2/input/page,_N_T_/step-2/input"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/step-2/input/__PAGE__",
+    "/step-2/input",
+    "/step-2",
+    "/_index",
+    "/_head"
+  ]
+}

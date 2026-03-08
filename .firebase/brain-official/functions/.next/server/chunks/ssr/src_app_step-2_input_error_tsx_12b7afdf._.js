@@ -1,0 +1,3 @@
+module.exports=[11312,a=>{"use strict";var b=a.i(87924);function c(){return(0,b.jsx)("div",{className:"brain-page flex min-h-screen items-center justify-center px-6",children:(0,b.jsxs)("div",{className:"brain-card p-8 text-center",children:[(0,b.jsx)("p",{className:"text-xl font-black tracking-[-0.03em]",children:"Step 2 입력 오류"}),(0,b.jsx)("p",{className:"mt-3 text-sm leading-6 text-[var(--muted)]",children:"Step 1 세션을 확인한 뒤 다시 시도해 주세요."})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_app_step-2_input_error_tsx_12b7afdf._.js.map

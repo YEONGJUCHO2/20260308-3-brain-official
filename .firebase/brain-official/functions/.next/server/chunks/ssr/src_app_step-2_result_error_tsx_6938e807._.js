@@ -1,0 +1,3 @@
+module.exports=[32171,a=>{"use strict";var b=a.i(87924);function c(){return(0,b.jsx)("div",{className:"brain-page flex min-h-screen items-center justify-center px-6",children:(0,b.jsxs)("div",{className:"brain-card p-8 text-center",children:[(0,b.jsx)("p",{className:"text-xl font-black tracking-[-0.03em]",children:"Step 2 결과 오류"}),(0,b.jsx)("p",{className:"mt-3 text-sm leading-6 text-[var(--muted)]",children:"고민 분석 결과를 다시 불러오는 데 실패했습니다."})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_app_step-2_result_error_tsx_6938e807._.js.map

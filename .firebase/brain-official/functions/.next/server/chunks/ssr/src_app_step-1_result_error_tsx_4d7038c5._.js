@@ -1,0 +1,3 @@
+module.exports=[71073,a=>{"use strict";var b=a.i(87924);function c(){return(0,b.jsx)("div",{className:"brain-page flex min-h-screen items-center justify-center px-6",children:(0,b.jsxs)("div",{className:"brain-card p-8 text-center",children:[(0,b.jsx)("p",{className:"text-xl font-black tracking-[-0.03em]",children:"Step 1 결과 오류"}),(0,b.jsx)("p",{className:"mt-3 text-sm leading-6 text-[var(--muted)]",children:"세션이 만료됐거나 결과를 만드는 중 문제가 생겼습니다."})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=src_app_step-1_result_error_tsx_4d7038c5._.js.map

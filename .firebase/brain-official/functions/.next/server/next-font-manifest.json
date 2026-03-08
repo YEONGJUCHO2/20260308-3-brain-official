@@ -1,0 +1,55 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/dashboard/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/privacy/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/share/step-1/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/share/step-2/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/step-1/chat/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/step-1/report/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/step-1/result/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/step-2/input/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/step-2/result/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ],
+    "[project]/src/app/terms/page": [
+      "static/media/fca78c2ee6cec166-s.p.11a55858.woff2",
+      "static/media/7fc9c92292d32c4a-s.p.c199330c.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

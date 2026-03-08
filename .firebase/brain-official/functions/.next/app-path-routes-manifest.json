@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/step1/chat/route": "/api/step1/chat",
+  "/api/step1/result/route": "/api/step1/result",
+  "/api/step2/analyze/route": "/api/step2/analyze",
+  "/dashboard/page": "/dashboard",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/share/step-1/page": "/share/step-1",
+  "/share/step-2/page": "/share/step-2",
+  "/step-1/chat/page": "/step-1/chat",
+  "/step-1/report/page": "/step-1/report",
+  "/step-1/result/page": "/step-1/result",
+  "/step-2/input/page": "/step-2/input",
+  "/step-2/result/page": "/step-2/result",
+  "/terms/page": "/terms"
+}

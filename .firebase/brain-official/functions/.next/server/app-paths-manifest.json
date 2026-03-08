@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/step1/chat/route": "app/api/step1/chat/route.js",
+  "/api/step1/result/route": "app/api/step1/result/route.js",
+  "/api/step2/analyze/route": "app/api/step2/analyze/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/share/step-1/page": "app/share/step-1/page.js",
+  "/share/step-2/page": "app/share/step-2/page.js",
+  "/step-1/chat/page": "app/step-1/chat/page.js",
+  "/step-1/report/page": "app/step-1/report/page.js",
+  "/step-1/result/page": "app/step-1/result/page.js",
+  "/step-2/input/page": "app/step-2/input/page.js",
+  "/step-2/result/page": "app/step-2/result/page.js",
+  "/terms/page": "app/terms/page.js"
+}

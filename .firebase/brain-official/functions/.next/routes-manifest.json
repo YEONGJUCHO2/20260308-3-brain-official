@@ -1,0 +1,140 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/step1/chat",
+      "regex": "^/api/step1/chat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/step1/chat(?:/)?$"
+    },
+    {
+      "page": "/api/step1/result",
+      "regex": "^/api/step1/result(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/step1/result(?:/)?$"
+    },
+    {
+      "page": "/api/step2/analyze",
+      "regex": "^/api/step2/analyze(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/step2/analyze(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/privacy",
+      "regex": "^/privacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy(?:/)?$"
+    },
+    {
+      "page": "/share/step-1",
+      "regex": "^/share/step\\-1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/share/step\\-1(?:/)?$"
+    },
+    {
+      "page": "/share/step-2",
+      "regex": "^/share/step\\-2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/share/step\\-2(?:/)?$"
+    },
+    {
+      "page": "/step-1/chat",
+      "regex": "^/step\\-1/chat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/step\\-1/chat(?:/)?$"
+    },
+    {
+      "page": "/step-1/report",
+      "regex": "^/step\\-1/report(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/step\\-1/report(?:/)?$"
+    },
+    {
+      "page": "/step-1/result",
+      "regex": "^/step\\-1/result(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/step\\-1/result(?:/)?$"
+    },
+    {
+      "page": "/step-2/input",
+      "regex": "^/step\\-2/input(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/step\\-2/input(?:/)?$"
+    },
+    {
+      "page": "/step-2/result",
+      "regex": "^/step\\-2/result(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/step\\-2/result(?:/)?$"
+    },
+    {
+      "page": "/terms",
+      "regex": "^/terms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
