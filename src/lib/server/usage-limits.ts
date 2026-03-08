@@ -19,6 +19,10 @@ type UsageKind = "step1" | "step2";
 
 const usageMemory = new Map<string, DailyUsageRecord>();
 
+function usageLimitsDisabled() {
+  return process.env.DISABLE_USAGE_LIMITS === "true";
+}
+
 export class UsageLimitExceededError extends Error {
   statusCode = 429;
 
@@ -100,6 +104,10 @@ async function readRecord(actor: RequestActor, date = getDateKey()) {
 }
 
 export async function assertDailyUsageLimit(actor: RequestActor, kind: UsageKind) {
+  if (usageLimitsDisabled()) {
+    return;
+  }
+
   const record = await readRecord(actor);
   const field = getFieldName(kind);
   const current = record[field];
@@ -111,6 +119,10 @@ export async function assertDailyUsageLimit(actor: RequestActor, kind: UsageKind
 }
 
 export async function recordUsage(actor: RequestActor, kind: UsageKind) {
+  if (usageLimitsDisabled()) {
+    return getDefaultRecord(actor, getDateKey());
+  }
+
   const date = getDateKey();
   const field = getFieldName(kind);
   const db = getAdminFirestore();
