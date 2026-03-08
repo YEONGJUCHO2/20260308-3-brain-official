@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     }
     console.error("Step 1 chat error:", error);
     return NextResponse.json(
-      { message: "Step 1 세션을 처리하지 못했습니다." },
+      { message: `에러가 발생했습니다: ${error instanceof Error ? error.message : String(error)}` },
       { status: 400 },
     );
   }

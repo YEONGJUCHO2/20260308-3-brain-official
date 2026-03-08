@@ -158,6 +158,22 @@ export function StepOneChat() {
           </div>
         ) : null}
 
+        {error && !currentQuestion ? (
+          <div className="mt-8 rounded-xl bg-[var(--pink)]/10 p-5 text-center">
+            <p className="text-sm font-semibold text-[var(--pink)]">{error}</p>
+            <button
+              onClick={() => {
+                const freshUrl = new URL(window.location.href);
+                freshUrl.searchParams.set("fresh", "1");
+                window.location.href = freshUrl.toString();
+              }}
+              className="mt-4 rounded-full bg-white px-4 py-2 text-xs font-bold shadow-sm"
+            >
+              처음부터 다시 시도
+            </button>
+          </div>
+        ) : null}
+
         {!isLoading && currentQuestion ? (
           <>
             <section className="rounded-[2rem] bg-[linear-gradient(135deg,#101c4e,#14245c)] px-6 py-6 text-white shadow-[var(--shadow-strong)]">
@@ -245,11 +261,10 @@ export function StepOneChat() {
                           type="button"
                           onClick={() => setSelectedOption(option.id)}
                           disabled={isSubmitting}
-                          className={`min-h-[132px] rounded-[1.6rem] border px-4 py-4 text-left transition ${
-                            active
+                          className={`min-h-[132px] rounded-[1.6rem] border px-4 py-4 text-left transition ${active
                               ? "border-[var(--pink)] bg-[linear-gradient(135deg,rgba(255,239,247,0.96),rgba(245,238,255,0.96))] shadow-[var(--shadow-soft)]"
                               : "border-[var(--line)] bg-white"
-                          }`}
+                            }`}
                         >
                           <div className="flex h-full flex-col justify-between">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(139,92,246,0.08)] text-[var(--violet)]">

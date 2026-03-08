@@ -23,7 +23,8 @@
       "mcp__sequential-thinking__sequentialthinking",
       "Bash(npx create-next-app@latest . --app --typescript --tailwind --eslint --src-dir --import-alias \"@/*\" --no-turbopack)",
       "Bash(npx create-next-app@latest brain-temp --app --typescript --tailwind --eslint --src-dir --import-alias \"@/*\" --no-turbopack)",
-      "Bash(npx next build)"
+      "Bash(npx next build)",
+      "Bash(ls \"c:/projects/3-brain-official/brain-official-firebase-adminsdk\"*)"
     ]
   }
 }
