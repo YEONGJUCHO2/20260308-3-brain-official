@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6eff5;
+  --panel: #fffdfd;
+  --panel-soft: rgba(255, 255, 255, 0.82);
+  --line: rgba(52, 39, 78, 0.1);
+  --text: #171329;
+  --muted: #756e89;
+  --pink: #ef3f8f;
+  --pink-strong: #ff2d6f;
+  --violet: #8b5cf6;
+  --violet-soft: #efe7ff;
+  --navy: #0d1634;
+  --warm: #fff2f0;
+  --success: #4f7cff;
+  --warning: #f59e0b;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2rem;
+  --shadow-soft: 0 18px 48px rgba(57, 26, 87, 0.08);
+  --shadow-strong: 0 22px 60px rgba(57, 26, 87, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(239, 63, 143, 0.1), transparent 35%),
+    linear-gradient(180deg, #fbf8fb 0%, var(--background) 100%);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--font-sans), sans-serif;
+  word-break: keep-all;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+svg {
+  display: block;
+}
+
+::selection {
+  background: rgba(239, 63, 143, 0.2);
+}
+
+.brain-app-shell {
+  min-height: 100vh;
+}
+
+.brain-page {
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 430px;
+  background: linear-gradient(180deg, #fffefe 0%, #f9f1f7 100%);
+  box-shadow: 0 24px 80px rgba(32, 10, 60, 0.12);
+}
+
+.brain-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.brain-card-soft {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: var(--panel-soft);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.brain-gradient-text {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--violet) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brain-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--violet) 100%);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 18px 30px rgba(239, 63, 143, 0.22);
+}
+
+.brain-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.brain-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  padding: 0.35rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.brain-section-title {
+  font-family: var(--font-serif), serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.brain-subtle-grid {
+  background-image:
+    linear-gradient(rgba(239, 63, 143, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 63, 143, 0.08) 1px, transparent 1px);
+  background-size: 2.2rem 2.2rem;
+}
+
+.brain-scroll-x {
+  scrollbar-width: none;
+}
+
+.brain-scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+.brain-ad-slot {
+  position: relative;
+  border: 1px solid rgba(52, 39, 78, 0.08);
+  border-radius: 1.75rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(249, 241, 247, 0.92) 100%);
+  box-shadow: var(--shadow-soft);
+  padding: 2.75rem 1rem 1rem;
+}
+
+.brain-ad-label {
+  position: absolute;
+  left: 1rem;
+  top: 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(52, 39, 78, 0.08);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  padding: 0.3rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.brain-ad-placeholder {
+  min-height: 100%;
+  border-radius: 1.2rem;
+  border: 1px dashed rgba(52, 39, 78, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  min-height: 104px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}

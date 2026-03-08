@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>뇌피셜 랜딩 페이지</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm z-10 border-b border-primary/10 dark:border-primary/20">
+<div class="text-primary flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">psychology</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-12">뇌피셜</h2>
+</div>
+<div class="@container flex-1 flex flex-col">
+<div class="@[480px]:p-4 flex-1 flex flex-col">
+<div class="flex min-h-[500px] flex-1 flex-col gap-8 bg-gradient-to-br from-primary/80 to-primary/40 dark:from-primary/90 dark:to-primary/60 @[480px]:rounded-xl items-center justify-center p-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80')] bg-cover bg-center mix-blend-overlay opacity-30" data-alt="Abstract colorful gradient background"></div>
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-white/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/40 rounded-full blur-3xl"></div>
+<div class="flex flex-col gap-4 text-center z-10 w-full max-w-sm">
+<div class="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-medium mx-auto mb-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span>AI 성찰 도구</span>
+</div>
+<h1 class="text-white text-3xl font-black leading-tight tracking-tight break-keep shadow-sm drop-shadow-md">
+                            매일 속고 있는 당신의 뇌를 위한 처방전
+                        </h1>
+<p class="text-white/90 text-base font-medium leading-relaxed mt-2 drop-shadow-sm break-keep">
+                            인지 편향을 알아보고 AI와 함께 스스로를 성찰해 보세요.
+                        </p>
+</div>
+<button class="z-10 mt-4 flex w-full max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-white text-primary hover:bg-slate-50 transition-colors shadow-lg active:scale-95 text-lg font-bold leading-normal tracking-wide">
+<span>테스트 시작하기</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">route</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">이용 방법</h2>
+</div>
+<div class="flex flex-col gap-4 relative">
+<div class="absolute left-6 top-8 bottom-8 w-0.5 bg-primary/20 dark:bg-primary/30 z-0"></div>
+<div class="flex gap-4 relative z-10 bg-background-light dark:bg-background-dark">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-md border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+<div class="flex flex-col gap-1 pt-2 pb-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">편향 캐릭터 찾기</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed break-keep">간단한 질문을 통해 나의 편향성을 대변하는 귀여운 캐릭터를 알아보세요.</p>
+</div>
+</div>
+<div class="flex gap-4 relative z-10 bg-background-light dark:bg-background-dark">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined">tips_and_updates</span>
+</div>
+<div class="flex flex-col gap-1 pt-2">
+<h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">딜레마 해결하기</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed break-keep">AI 메이트와 대화하며 일상의 복잡한 딜레마를 객관적인 시각으로 해결해 보세요.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto p-6 pt-2 pb-8 flex flex-col items-center">
+<div class="w-full h-px bg-slate-200 dark:bg-slate-800 mb-6"></div>
+<div class="flex items-center gap-2 text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800/50 px-4 py-3 rounded-xl w-full justify-center">
+<span class="material-symbols-outlined text-sm">info</span>
+<p class="text-xs font-medium leading-normal text-center break-keep">
+                        이 서비스는 진단이 아닌 성찰을 돕는 도구입니다.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

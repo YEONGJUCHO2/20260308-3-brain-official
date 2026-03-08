@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>뇌피셜 - 분석 결과 리포트</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 flex justify-center w-full min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md z-10">
+<button class="flex size-12 shrink-0 items-center justify-center text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">뇌피셜 분석 리포트</h2>
+</div>
+<main class="flex-1 pb-24">
+<!-- Header Section -->
+<div class="px-6 pt-6 pb-4">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-xs rounded-full mb-2 uppercase tracking-wider">Step 1 완료</span>
+<h1 class="text-[32px] font-bold leading-tight pb-2">당신의 뇌피셜 유형</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm">AI가 분석한 당신의 인지 편향 캐릭터입니다.</p>
+</div>
+<!-- Cards Carousel -->
+<div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden px-4 pb-8 snap-x">
+<div class="flex items-stretch gap-4 px-2">
+<!-- Card 1 -->
+<div class="flex h-full flex-col gap-4 rounded-xl min-w-[240px] max-w-[240px] p-4 bg-white dark:bg-slate-800 shadow-sm snap-center border border-slate-100 dark:border-slate-700">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex flex-col" data-alt="Abstract colorful fluid illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZ6TpZR9e4z1KDLIvfOaqSX7uloTnJspTbxRm6AlJdR4PJaMKbDKJn8OtLVLtT435Z9oC8aQzFMhlK5hHgPpW38P8djw_42ZHEr0-6uXOkPDeoLjYN-90sWzUAXvy6z12de4B_FdsD3a5w905Lc0GkjXT3BAvU25sQM7JMiWQ2ahaxv16ELrZ-wbOuUIR8IE1uS5ZCzZuB7tCqvszzg7eRIFxQ8TWYdlRzAHNs8rLv9I3gb7QeVdCWBEzbwcyAMauVjm3TNgL59xRc");'></div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">military_tech</span>
+<span class="text-xs font-bold text-primary">Top 1</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-1">확증편향의 늪에 빠진 탐험가</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">내가 믿고 싶은 것만 본다!</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex h-full flex-col gap-4 rounded-xl min-w-[240px] max-w-[240px] p-4 bg-white dark:bg-slate-800 shadow-sm snap-center border border-slate-100 dark:border-slate-700 opacity-90 scale-95 origin-left transition-transform">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex flex-col" data-alt="Abstract glowing star illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7AMynIPPTm_8qnkKMTJGhuTFrLlS6GiOsZnRABD1Kv9BsLkcLb4pWqHFuo89QPTW-XuEGK42MHDfgzv6WOWLyZR-mv0XoiKH9zY8ZgXhu9zPU0UxuwIqqXhReW2ysusXTvfO_fkgEpPRCFoGo0ibB8uyt2Sxa3ov92YaGPPxqM__u4gHTcc42M5ZflZwodDzkMTZl7_ifN-hGGRy3V7U1ukdhX8Pk4WyGKOMsteZquzCJd7fztkr87--FlaXyLcU3oPOBMRaF7rDQ");'></div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 mb-1">
+<span class="text-xs font-bold text-slate-400 dark:text-slate-500">Top 2</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-1">후광효과에 눈먼 별빛 관찰자</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">하나가 좋으면 다 좋아 보인다!</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex h-full flex-col gap-4 rounded-xl min-w-[240px] max-w-[240px] p-4 bg-white dark:bg-slate-800 shadow-sm snap-center border border-slate-100 dark:border-slate-700 opacity-90 scale-95 origin-left transition-transform">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex flex-col" data-alt="Abstract memory wave illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHMUbbSPbiGUgsdIFJVD3IRzLtUeQ3Rq-Z67d0crk2Klm_MYKaBcDswEZ_q13AEdFQWky9u1aoscESGs8h2x_zPyDW8XHhXKYTpA5AUTPxLWLU-Bo3cF-KP0Y34QFBqUG_2b0ui0GUau3CXeFxJsA3IkEXavYX2GL5LyiL2QQbIt_4Hw63qHOxhbbLxjrYc572oPBCTUL9rVkRLIxPVSpesR9Nemn5z4-eanla99LjvnTP0EbC-hb2pEC9zY9TdpTIpeOtvq6Oj_ra");'></div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 mb-1">
+<span class="text-xs font-bold text-slate-400 dark:text-slate-500">Top 3</span>
+</div>
+<h3 class="text-lg font-bold leading-tight mb-1">가용성 휴리스틱에 갇힌 기억의 마법사</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">최근 기억이 가장 중요하다!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Radar Chart Section -->
+<div class="px-6 py-6">
+<h2 class="text-[22px] font-bold leading-tight tracking-[-0.015em] pb-4">나의 인지 편향 지수</h2>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-center mb-6">
+<p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">인지 편향 레이더</p>
+<span class="material-symbols-outlined text-primary">radar</span>
+</div>
+<!-- Abstract representation of Radar Chart using line chart as fallback -->
+<div class="relative w-full h-48 flex items-center justify-center mb-4">
+<div class="absolute inset-0 border-b border-l border-slate-200 dark:border-slate-700">
+<!-- Grid lines -->
+<div class="absolute w-full border-t border-slate-200 dark:border-slate-700 top-1/4"></div>
+<div class="absolute w-full border-t border-slate-200 dark:border-slate-700 top-2/4"></div>
+<div class="absolute w-full border-t border-slate-200 dark:border-slate-700 top-3/4"></div>
+</div>
+<svg class="w-full h-full relative z-10" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ee2b5b" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#ee2b5b" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 80 L20 20 L40 60 L60 30 L80 70 L100 40 L100 100 L0 100 Z" fill="url(#chartGradient)"></path>
+<path d="M0 80 L20 20 L40 60 L60 30 L80 70 L100 40" fill="none" stroke="#ee2b5b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Data points -->
+<circle cx="20" cy="20" fill="#ee2b5b" r="3"></circle>
+<circle cx="40" cy="60" fill="#ee2b5b" r="3"></circle>
+<circle cx="60" cy="30" fill="#ee2b5b" r="3"></circle>
+<circle cx="80" cy="70" fill="#ee2b5b" r="3"></circle>
+</svg>
+</div>
+<div class="flex justify-between w-full px-2">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary mb-1"></div>
+<span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">확증편향</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary/70 mb-1"></div>
+<span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">후광효과</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary/50 mb-1"></div>
+<span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">가용성</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary/30 mb-1"></div>
+<span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">앵커링</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 mb-1"></div>
+<span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">손실회피</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quote Block -->
+<div class="px-6 py-4 mb-8">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-6 border border-primary/10 relative">
+<span class="material-symbols-outlined absolute -top-3 -left-2 text-primary text-4xl bg-background-light dark:bg-background-dark rounded-full">format_quote</span>
+<p class="text-slate-700 dark:text-slate-200 font-medium italic text-lg leading-relaxed text-center">
+                        "당신은 스스로 논리적이라 믿지만,<br/>사실은 가장 설득력 있는 변명꾼일지 모릅니다."
+                    </p>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Actions -->
+<div class="fixed bottom-0 left-0 right-0 w-full flex justify-center pointer-events-none">
+<div class="w-full max-w-md bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg p-4 pb-8 border-t border-slate-100 dark:border-slate-800 pointer-events-auto shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+<div class="flex gap-3">
+<button class="flex-1 flex items-center justify-center gap-2 py-4 px-6 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">share</span>
+<span>결과 공유</span>
+</button>
+<button class="flex-[2] flex items-center justify-center gap-2 py-4 px-6 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+<span>Step 2: 딜레마 풀기</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

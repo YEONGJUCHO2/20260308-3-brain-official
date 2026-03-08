@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>마이 대시보드 - 뇌피셜</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#2a141a] shadow-lg">
+<!-- Header -->
+<header class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-white/80 dark:bg-[#2a141a]/80 backdrop-blur-md z-10 border-b border-primary/10">
+<div class="flex size-12 shrink-0 items-center justify-center text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h2 class="text-lg font-bold leading-tight flex-1 text-center">마이 대시보드</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-transparent hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-2xl text-slate-900 dark:text-slate-100">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Profile Section -->
+<section class="flex flex-col items-center p-6 gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-24 w-24 border-4 border-primary/20 shadow-sm" data-alt="Abstract gradient avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNe22MCxL027L6ZPlLq4c2Qgp5ZI8TFi9ZJ1vH0oxrNYMYGykdskSl9ZJct3VDwS4fprdiK4wVIgx5lnbmMkmKlL04cxnoB1orH7ZaeWBfzE1Tf0-VzbZLtOrwnmqE8VnAp4BbJQ9cn0U6NIVe2zu4lbdYUGXbOI58qBKDl0KM9snc3cZyPWzsCeldvIzWiRdFI_NiJNIBbMuh6sBHvYk_FTIEyXKdCmcIRkQHX2FMOD3DNqwrTbjoGZV6g4JdmgzN-65HZLcaeNC1");'></div>
+<div class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-1 shadow-md">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<p class="text-2xl font-bold leading-tight">환영합니다, 사용자님!</p>
+<p class="text-primary font-medium mt-1">나의 뇌피셜 프로필 분석 요약</p>
+</div>
+</section>
+<!-- Top Biases -->
+<section class="px-4 py-2">
+<div class="flex flex-wrap gap-3">
+<div class="flex flex-1 flex-col gap-2 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-4 items-center text-center shadow-sm">
+<p class="text-xl font-bold leading-tight">확증편향</p>
+<div class="inline-flex items-center px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold">Top 1</div>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-4 items-center text-center shadow-sm">
+<p class="text-xl font-bold leading-tight">가용성편향</p>
+<div class="inline-flex items-center px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold">Top 2</div>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-4 items-center text-center shadow-sm">
+<p class="text-xl font-bold leading-tight">후광효과</p>
+<div class="inline-flex items-center px-2 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold">Top 3</div>
+</div>
+</div>
+</section>
+<!-- Cognitive Profile Chart (Simplified for HTML/CSS) -->
+<section class="p-4 mt-2">
+<div class="bg-white dark:bg-[#351921] rounded-2xl p-5 shadow-sm border border-primary/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">나의 인지 편향 프로필</p>
+<p class="text-2xl font-bold mt-1">전체 종합</p>
+</div>
+<div class="flex items-center gap-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-lg text-sm font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +5%
+                    </div>
+</div>
+<!-- Mock Radar Chart using SVG and CSS -->
+<div class="relative w-full aspect-square max-w-[250px] mx-auto my-6 flex items-center justify-center">
+<!-- Concentric circles for radar -->
+<div class="absolute inset-0 rounded-full border border-primary/20"></div>
+<div class="absolute inset-[15%] rounded-full border border-primary/20"></div>
+<div class="absolute inset-[30%] rounded-full border border-primary/20"></div>
+<div class="absolute inset-[45%] rounded-full border border-primary/20"></div>
+<!-- Axes -->
+<div class="absolute w-full h-[1px] bg-primary/20"></div>
+<div class="absolute w-[1px] h-full bg-primary/20"></div>
+<div class="absolute w-full h-[1px] bg-primary/20 rotate-45"></div>
+<div class="absolute w-[1px] h-full bg-primary/20 rotate-45"></div>
+<!-- Data Polygon (Mock) -->
+<svg class="absolute inset-0 w-full h-full" viewbox="0 0 100 100">
+<polygon fill="rgba(238, 43, 91, 0.2)" points="50,10 80,40 70,85 30,75 15,45" stroke="#ee2b5b" stroke-width="2"></polygon>
+</svg>
+<!-- Labels -->
+<span class="absolute -top-6 text-xs font-bold text-primary">확증</span>
+<span class="absolute -right-8 text-xs font-bold text-primary">가용성</span>
+<span class="absolute -bottom-6 text-xs font-bold text-primary">후광</span>
+<span class="absolute -left-6 text-xs font-bold text-primary">앵커링</span>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="p-4 flex gap-3">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95">
+<span class="material-symbols-outlined">psychology</span>
+                새 분석 시작
+            </button>
+<button class="flex-1 bg-primary/10 hover:bg-primary/20 text-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined">restart_alt</span>
+                편향 재검사
+            </button>
+</section>
+<!-- Recent History -->
+<section class="p-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold">최근 분석 기록</h3>
+<a class="text-sm font-medium text-primary hover:underline" href="#">더보기</a>
+</div>
+<div class="flex flex-col gap-3">
+<!-- History Item 1 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#351921] border border-primary/10 shadow-sm">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">gavel</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-base font-bold truncate">이직 고민: A회사 vs B회사</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">2일 전 • 확증편향 감지됨</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<!-- History Item 2 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#351921] border border-primary/10 shadow-sm">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-base font-bold truncate">고가의 전자기기 충동구매</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">1주 전 • 앵커링 효과 분석</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto flex gap-2 border-t border-primary/10 bg-white dark:bg-[#2a141a] px-4 pb-safe pt-2 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<p class="text-xs font-medium">홈</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">bar_chart</span>
+<p class="text-xs font-medium">분석</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">history</span>
+<p class="text-xs font-medium">기록</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 py-2 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">person</span>
+<p class="text-xs font-bold">마이</p>
+</a>
+</nav>
+<!-- Spacer for fixed bottom nav -->
+<div class="h-16"></div>
+</div>
+</body></html>

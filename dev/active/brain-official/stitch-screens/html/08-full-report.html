@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>프리미엄 전체 리포트</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b5b",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221015",
+              "slate-900": "#1a1a1a",
+              "slate-800": "#2d2d2d",
+              "slate-700": "#404040",
+              "slate-600": "#595959",
+              "slate-500": "#737373",
+              "slate-400": "#8c8c8c",
+              "slate-300": "#a6a6a6",
+              "slate-200": "#bfbfbf",
+              "slate-100": "#d9d9d9",
+              "slate-50": "#f2f2f2",
+              "primary-50": "#fdf2f4",
+              "primary-100": "#fbe5ea",
+              "primary-200": "#f7ccd5",
+              "primary-300": "#f3a5b6",
+              "primary-400": "#ec718b",
+              "primary-500": "#ee2b5b",
+              "primary-600": "#d61947",
+              "primary-700": "#b30f36",
+              "primary-800": "#941030",
+              "primary-900": "#7c122b",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans KR", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display selection:bg-primary/30">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto shadow-xl bg-white dark:bg-slate-900 pb-20">
+<!-- Top Nav -->
+<div class="sticky top-0 z-50 flex items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-4 justify-between border-b border-slate-100 dark:border-slate-800">
+<a class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</a>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight flex-1 text-center pr-10">전체 리포트</h2>
+</div>
+<!-- Header Section -->
+<div class="px-5 pt-8 pb-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary mb-4 text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+            프리미엄 리포트
+        </div>
+<h1 class="text-slate-900 dark:text-slate-100 text-[28px] font-bold leading-tight mb-3">
+            나의 인지 편향<br/>심층 분석 리포트
+        </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+            당신의 생각 패턴을 분석하여 보다 객관적이고 명확한 시각을 가질 수 있도록 돕는 심층 리포트입니다. 일상의 결정에 숨어있는 심리적 함정을 파악해보세요.
+        </p>
+</div>
+<!-- Summary Section -->
+<div class="px-5 py-6 bg-primary-50 dark:bg-slate-800 border-y border-primary-100 dark:border-slate-700">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">pie_chart</span>
+            주요 인지 편향 요약
+        </h2>
+<div class="space-y-4">
+<!-- Bias 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">확증 편향</h3>
+<span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded">높음</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 mb-3">
+<div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">자신의 믿음을 확인하는 정보만 선별적으로 수용하려는 경향이 강하게 나타납니다.</p>
+</div>
+<!-- Bias 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">가용성 휴리스틱</h3>
+<span class="bg-primary-300 dark:bg-primary-700 text-white text-xs font-bold px-2 py-1 rounded">보통</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 mb-3">
+<div class="bg-primary-400 h-2 rounded-full" style="width: 60%"></div>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">기억에 쉽게 떠오르는 정보에 지나치게 의존하여 판단하는 경향이 있습니다.</p>
+</div>
+</div>
+</div>
+<!-- Deep Dive: Confirmation Bias -->
+<div class="px-5 py-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">심층 분석: 확증 편향</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Confirmation Bias</p>
+</div>
+</div>
+<div class="prose dark:prose-invert prose-slate prose-sm max-w-none">
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                분석 결과, 일상적인 의사결정에서 확증 편향이 가장 큰 영향을 미치고 있습니다. 이는 새로운 정보를 접할 때 기존의 신념이나 가설에 부합하는 정보만을 선택적으로 받아들이고, 반대되는 증거는 무시하거나 과소평가하는 심리적 경향성을 의미합니다.
+            </p>
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-5 mb-6 border border-slate-100 dark:border-slate-700">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">history_edu</span>
+                    역사적 배경
+                </h4>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    이 현상은 고대 그리스의 역사가 투키디데스부터 시작하여 프랜시스 베이컨 등 수많은 철학자들에 의해 언급되었습니다. 인간의 뇌는 인지적 에너지를 아끼기 위해 복잡한 분석보다는 기존의 패턴을 유지하려는 진화적 특성을 가집니다.
+                </p>
+</div>
+<h4 class="font-bold text-lg text-slate-900 dark:text-slate-100 mb-3 mt-6">맞춤형 극복 솔루션</h4>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">중요한 결정을 내리기 전, 의도적으로 <strong>반대 의견을 가진 사람과 대화</strong>하거나 반대 사례를 3가지 이상 찾아보세요.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">정보를 검색할 때, 자신이 믿는 바를 증명하려는 키워드 대신 <strong>중립적인 키워드</strong>를 사용하십시오.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Deep Dive: Availability Heuristic -->
+<div class="px-5 py-8 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300">
+<span class="material-symbols-outlined text-2xl">memory</span>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100">심층 분석: 가용성 휴리스틱</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Availability Heuristic</p>
+</div>
+</div>
+<div class="prose dark:prose-invert prose-slate prose-sm max-w-none">
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                최근의 강렬한 사건이나 감정적으로 자극적인 뉴스 등에 영향을 받아, 특정 사건의 발생 확률을 실제보다 높게 평가하는 경향이 관찰되었습니다. 이는 불안감을 증폭시키거나 잘못된 리스크 평가로 이어질 수 있습니다.
+            </p>
+<h4 class="font-bold text-lg text-slate-900 dark:text-slate-100 mb-3">맞춤형 극복 솔루션</h4>
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-4 border border-primary/20">
+<p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    직감에 의존하기 전에 객관적인 <strong>통계 데이터</strong>를 확인하는 습관을 들이세요. 특히 미디어에서 자극적으로 보도하는 사건일수록 실제 발생 확률을 숫자로 확인하는 과정이 필요합니다.
+                </p>
+</div>
+</div>
+</div>
+<!-- Action Plan -->
+<div class="px-5 py-8 bg-slate-900 dark:bg-black text-white mt-4">
+<h2 class="text-xl font-bold mb-2">나를 위한 30일 실천 플랜</h2>
+<p class="text-slate-400 text-sm mb-6">인지 편향을 줄이고 더 나은 결정을 내리기 위한 첫 걸음</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-slate-800 dark:bg-slate-900 p-4 rounded-xl">
+<div class="bg-primary text-white size-8 rounded-full flex items-center justify-center font-bold">1</div>
+<p class="flex-1 font-medium">매일 밤 '오늘의 편향 일기' 한 줄 쓰기</p>
+</div>
+<div class="flex items-center gap-4 bg-slate-800 dark:bg-slate-900 p-4 rounded-xl">
+<div class="bg-primary text-white size-8 rounded-full flex items-center justify-center font-bold">2</div>
+<p class="flex-1 font-medium">결정 전 '반대 증거 찾기' 5분 투자하기</p>
+</div>
+</div>
+<button class="w-full mt-8 bg-primary hover:bg-primary-600 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-primary/30">
+            리포트 PDF 다운로드
+        </button>
+</div>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg px-4 pb-safe pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<p class="text-[10px] font-medium leading-normal">홈</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2" href="#">
+<span class="material-symbols-outlined text-2xl">psychology</span>
+<p class="text-[10px] font-medium leading-normal">진단</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary py-2" href="#">
+<span class="material-symbols-outlined text-2xl font-variation-fill" style="font-variation-settings: 'FILL' 1;">description</span>
+<p class="text-[10px] font-medium leading-normal">리포트</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<p class="text-[10px] font-medium leading-normal">마이</p>
+</a>
+</div>
+</div>
+</body></html>

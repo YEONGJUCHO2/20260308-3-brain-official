@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell:*)",
+      "Bash(node:*)",
+      "Bash(claude mcp:*)",
+      "Bash(pip install:*)",
+      "Bash(uv sync:*)",
+      "Bash(python:*)",
+      "Bash(cp:*)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebFetch(domain:firebase.google.com)",
+      "WebFetch(domain:developers.kakao.com)",
+      "WebFetch(domain:www.aifreeapi.com)",
+      "WebFetch(domain:www.metacto.com)",
+      "WebFetch(domain:blog.laozhang.ai)",
+      "WebFetch(domain:supertokens.com)",
+      "WebFetch(domain:candoconsulting.medium.com)",
+      "WebFetch(domain:cosmos-kim.com)",
+      "WebFetch(domain:www.koreatimes.co.kr)",
+      "WebFetch(domain:blog.opensurvey.co.kr)",
+      "WebFetch(domain:www.businessofapps.com)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(npx create-next-app@latest . --app --typescript --tailwind --eslint --src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npx create-next-app@latest brain-temp --app --typescript --tailwind --eslint --src-dir --import-alias \"@/*\" --no-turbopack)"
+    ]
+  }
+}

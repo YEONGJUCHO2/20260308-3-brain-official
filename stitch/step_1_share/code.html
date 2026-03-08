@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>캐릭터 분석 공유 카드</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["'Noto Serif KR'", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 flex justify-center items-center min-h-screen">
+<!-- Share Card Container (4:5 Aspect Ratio for Social) -->
+<div class="relative flex flex-col w-full max-w-[400px] aspect-[4/5] bg-background-light dark:bg-background-dark overflow-hidden shadow-2xl @container">
+<!-- Top App Bar equivalent -->
+<div class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-4 bg-gradient-to-b from-black/50 to-transparent">
+<h2 class="text-white text-lg font-bold tracking-tight">뇌피셜</h2>
+</div>
+<!-- Main Character Image Area -->
+<div class="relative flex-1 bg-cover bg-center flex flex-col justify-end" data-alt="Abstract pink and purple gradient artwork representing a character" style='background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(34, 16, 21, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZc_SwEJYgC-ir7qWwxmBVHCW_iJ8_cENoujof-TdjEZydULXoelKO-g3QmrYwUNRYaFf1Y0GLCNmqsEKJcOhxDU80Am4TU2ggnIS55g1WBCINhpHsDAVB3vxNH3ZVtmd36OFtLjn6wm1geiYQG-n2LzKavjtCBSnb7IzrXgyEpwxbcjsLtHOA4r37IMNGhjfiI7raTBOUuxtakKTS9Dcc3JbSQilt7Af_rYMaZHmITgfoa0NtHBqOCDXiySR44HhoUWFtkYvkslxR");'>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<div class="relative z-10 p-6 flex flex-col gap-2">
+<span class="text-primary font-bold text-sm tracking-widest uppercase">나의 첫 번째 뇌피셜 캐릭터</span>
+<h1 class="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight drop-shadow-lg">사려 깊은<br/>관찰자</h1>
+<p class="text-slate-200 text-sm md:text-base font-medium mt-2 max-w-[80%] leading-relaxed">당신이 몰랐던 당신의 진짜 사고 패턴을 확인해보세요.</p>
+</div>
+</div>
+<!-- Details Area -->
+<div class="bg-white dark:bg-slate-900 p-6 flex flex-col gap-4 z-20">
+<!-- Top 3 Summary -->
+<div class="flex items-center gap-4 bg-primary/5 dark:bg-primary/10 p-4 rounded-xl border border-primary/10 dark:border-primary/20">
+<div class="flex items-center justify-center rounded-lg bg-primary/20 text-primary shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold mb-1">Top 3 캐릭터</p>
+<p class="text-primary dark:text-primary text-xs font-medium leading-tight">1. 사려 깊은 관찰자<br/>2. 분석적인 전략가<br/>3. 창의적인 탐험가</p>
+</div>
+</div>
+<!-- Footer / CTA -->
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">나만의 뇌피셜 찾기</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">brain-official.ai</span>
+</div>
+<div class="size-10 bg-slate-100 dark:bg-slate-800 rounded flex items-center justify-center border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">qr_code_2</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>
