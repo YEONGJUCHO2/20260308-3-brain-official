@@ -14,6 +14,14 @@ function getCollection() {
   return db ? db.collection(COLLECTION_NAME) : null;
 }
 
+function isPermissionDeniedError(error: unknown) {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return /PERMISSION_DENIED|Permission denied/i.test(error.message);
+}
+
 function stripUndefinedDeep<T>(value: T): T {
   if (Array.isArray(value)) {
     return value.map((item) => stripUndefinedDeep(item)) as T;
@@ -38,12 +46,21 @@ export async function getSessionRecord(sessionId?: string) {
     return getSession(sessionId);
   }
 
-  const snapshot = await collection.doc(sessionId).get();
-  if (!snapshot.exists) {
-    return null;
-  }
+  try {
+    const snapshot = await collection.doc(sessionId).get();
+    if (!snapshot.exists) {
+      return null;
+    }
 
-  return createSessionFromRecord(snapshot.data() as BrainSession);
+    return createSessionFromRecord(snapshot.data() as BrainSession);
+  } catch (error) {
+    if (isPermissionDeniedError(error)) {
+      console.warn("Firestore session read denied, falling back to in-memory session store.", error);
+      return getSession(sessionId);
+    }
+
+    throw error;
+  }
 }
 
 export async function getOrCreateSessionRecord(sessionId?: string) {
@@ -65,6 +82,16 @@ export async function persistSessionRecord(session: BrainSession) {
     return saved;
   }
 
-  await collection.doc(saved.id).set(stripUndefinedDeep(saved), { merge: true });
+  try {
+    await collection.doc(saved.id).set(stripUndefinedDeep(saved), { merge: true });
+  } catch (error) {
+    if (isPermissionDeniedError(error)) {
+      console.warn("Firestore session write denied, keeping session in memory only.", error);
+      return saved;
+    }
+
+    throw error;
+  }
+
   return saved;
 }
