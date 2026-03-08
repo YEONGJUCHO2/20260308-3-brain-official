@@ -4,7 +4,11 @@ import { getFirestore } from "firebase-admin/firestore";
 
 function getPrivateKey() {
   const key = process.env.ADMIN_PRIVATE_KEY;
-  return key?.replace(/\\n/g, "\n");
+  if (!key) return undefined;
+
+  // Handle both literal '\\n' strings and actual newline characters
+  // from App Hosting / Vercel env var injections
+  return key.replace(/\\n/g, "\n").replace(/"/g, ''); // Also remove any potential quotes surrounding the json value from secrets
 }
 
 export function hasFirebaseAdminConfig() {
