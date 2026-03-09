@@ -1,12 +1,16 @@
 import { getApps, initializeApp, type FirebaseApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyATTdLtbKEIvOFaz479oQ6iQ-wFWdK0JpI",
-  authDomain: "brain-official.firebaseapp.com",
-  projectId: "brain-official",
-  storageBucket: "brain-official.firebasestorage.app",
-  messagingSenderId: "323291636893",
-  appId: "1:323291636893:web:b7df7c38d32cd4c523e074",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyATTdLtbKEIvOFaz479oQ6iQ-wFWdK0JpI",
+  authDomain:
+    process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "brain-official.firebaseapp.com",
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "brain-official",
+  storageBucket:
+    process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "brain-official.firebasestorage.app",
+  messagingSenderId:
+    process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "323291636893",
+  appId:
+    process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "1:323291636893:web:b7df7c38d32cd4c523e074",
 };
 
 export function hasFirebaseClientConfig() {

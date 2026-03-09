@@ -8,6 +8,14 @@ function shouldPreferDefaultCredentials() {
   return Boolean(process.env.FIREBASE_CONFIG) && process.env.NODE_ENV !== "development";
 }
 
+function getResolvedProjectId() {
+  return (
+    process.env.ADMIN_PROJECT_ID ??
+    process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ??
+    process.env.NEXT_PUBLIC_ADMIN_PROJECT_ID
+  );
+}
+
 function getPrivateKey() {
   const key = process.env.ADMIN_PRIVATE_KEY;
   if (!key) return undefined;
@@ -39,9 +47,7 @@ export function getFirebaseAdminApp() {
     }
 
     return initializeApp({
-      projectId:
-        process.env.NEXT_PUBLIC_ADMIN_PROJECT_ID ??
-        process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+      projectId: getResolvedProjectId(),
     });
   }
 
@@ -67,9 +73,7 @@ export function getFirebaseAdminApp() {
   // In Firebase App Hosting / other Google-managed runtimes, prefer
   // Application Default Credentials instead of storing a private key.
   return initializeApp({
-    projectId:
-      process.env.NEXT_PUBLIC_ADMIN_PROJECT_ID ??
-      process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    projectId: getResolvedProjectId(),
   });
 }
 
