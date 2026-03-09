@@ -22,6 +22,10 @@ function isPermissionDeniedError(error: unknown) {
   return /PERMISSION_DENIED|Permission denied/i.test(error.message);
 }
 
+function shouldUseInMemoryPermissionFallback() {
+  return process.env.NODE_ENV !== "production";
+}
+
 function stripUndefinedDeep<T>(value: T): T {
   if (Array.isArray(value)) {
     return value.map((item) => stripUndefinedDeep(item)) as T;
@@ -54,7 +58,7 @@ export async function getSessionRecord(sessionId?: string) {
 
     return createSessionFromRecord(snapshot.data() as BrainSession);
   } catch (error) {
-    if (isPermissionDeniedError(error)) {
+    if (isPermissionDeniedError(error) && shouldUseInMemoryPermissionFallback()) {
       console.warn("Firestore session read denied, falling back to in-memory session store.", error);
       return getSession(sessionId);
     }
@@ -85,7 +89,7 @@ export async function persistSessionRecord(session: BrainSession) {
   try {
     await collection.doc(saved.id).set(stripUndefinedDeep(saved), { merge: true });
   } catch (error) {
-    if (isPermissionDeniedError(error)) {
+    if (isPermissionDeniedError(error) && shouldUseInMemoryPermissionFallback()) {
       console.warn("Firestore session write denied, keeping session in memory only.", error);
       return saved;
     }
