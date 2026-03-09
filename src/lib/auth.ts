@@ -1,21 +1,5 @@
 import { getFirebaseAuth } from "@/lib/firebase";
-
-function isMobileUserAgent() {
-  if (typeof navigator === "undefined") {
-    return false;
-  }
-
-  return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-}
-
-function isEmbeddedInAppBrowser() {
-  if (typeof navigator === "undefined") {
-    return false;
-  }
-
-  const userAgent = navigator.userAgent;
-  return /KAKAOTALK|NAVER|FBAN|FBAV|Instagram|Line|; wv\)|\bwv\b/i.test(userAgent);
-}
+import { isEmbeddedInAppBrowser, isMobileUserAgent } from "@/lib/client/browser-env";
 
 export async function signInWithGoogle() {
   const auth = await getFirebaseAuth();
