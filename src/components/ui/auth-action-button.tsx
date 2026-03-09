@@ -14,6 +14,14 @@ function getAuthErrorMessage(error: unknown, isLogout: boolean) {
 
   const code = (error as { code?: string } | null)?.code;
 
+  if (code === "auth/in-app-browser-unsupported") {
+    return "네이버, 카카오, 인스타 같은 인앱 브라우저에서는 Google 로그인이 차단될 수 있습니다.\nSafari 또는 Chrome에서 이 페이지를 다시 열어 로그인해 주세요.";
+  }
+
+  if (code === "auth/disallowed-useragent") {
+    return "현재 브라우저에서는 Google 로그인이 차단되었습니다.\nSafari 또는 Chrome에서 다시 열어 로그인해 주세요.";
+  }
+
   if (code === "auth/popup-blocked") {
     return "브라우저가 로그인 팝업을 막았습니다. 팝업 차단을 해제하거나 새 탭 로그인으로 다시 시도해 주세요.";
   }
@@ -31,7 +39,7 @@ function getAuthErrorMessage(error: unknown, isLogout: boolean) {
   }
 
   const errorMessage = (error as { message?: string })?.message || "알 수 없는 오류";
-  return `로그인에 실패했습니다.\n사유: ${code || errorMessage}\n팝업 차단이나 Firebase 인증 설정을 확인해 주세요.`;
+  return `로그인에 실패했습니다.\n사유: ${code || errorMessage}\n브라우저 환경이나 Firebase 인증 설정을 확인해 주세요.`;
 }
 
 export function AuthActionButton() {
