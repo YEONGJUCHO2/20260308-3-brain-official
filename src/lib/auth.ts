@@ -1,5 +1,5 @@
 import { getFirebaseAuth } from "@/lib/firebase";
-import { isEmbeddedInAppBrowser, isMobileUserAgent } from "@/lib/client/browser-env";
+import { isEmbeddedInAppBrowser } from "@/lib/client/browser-env";
 
 export async function signInWithGoogle() {
   const auth = await getFirebaseAuth();
@@ -7,7 +7,7 @@ export async function signInWithGoogle() {
     throw new Error("Firebase 클라이언트 설정이 없어 로그인 기능을 사용할 수 없습니다.");
   }
 
-  const { GoogleAuthProvider, signInWithPopup, signInWithRedirect } = await import("firebase/auth");
+  const { GoogleAuthProvider, signInWithPopup } = await import("firebase/auth");
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({
     prompt: "select_account",
@@ -21,22 +21,7 @@ export async function signInWithGoogle() {
     throw error;
   }
 
-  if (isMobileUserAgent()) {
-    await signInWithRedirect(auth, provider);
-    return null;
-  }
-
-  try {
-    return await signInWithPopup(auth, provider);
-  } catch (error) {
-    const code = (error as { code?: string })?.code;
-    if (code === "auth/popup-blocked" || code === "auth/cancelled-popup-request") {
-      await signInWithRedirect(auth, provider);
-      return null;
-    }
-
-    throw error;
-  }
+  return signInWithPopup(auth, provider);
 }
 
 export async function signOutFromFirebase() {
