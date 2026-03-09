@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Copy, ExternalLink, X } from "lucide-react";
 
 import {
-  buildChromeIntentUrl,
+  handoffToExternalBrowser,
   isAndroidUserAgent,
   isEmbeddedInAppBrowser,
   isIosUserAgent,
@@ -19,18 +19,16 @@ export function InAppBrowserBanner() {
   }, []);
 
   async function handleCopy() {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
+    const result = await handoffToExternalBrowser(window.location.href);
+    if (result === "copied") {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1800);
-    } catch (error) {
-      console.error("Failed to copy URL for external browser handoff.", error);
+      return;
+    }
+
+    if (result === "unsupported") {
       window.alert("링크 복사에 실패했습니다. 주소창에서 직접 복사해 주세요.");
     }
-  }
-
-  function handleOpenInChrome() {
-    window.location.href = buildChromeIntentUrl(window.location.href);
   }
 
   if (!isVisible) {
@@ -49,7 +47,7 @@ export function InAppBrowserBanner() {
             {isAndroidUserAgent() ? (
               <button
                 type="button"
-                onClick={handleOpenInChrome}
+                onClick={() => void handoffToExternalBrowser(window.location.href)}
                 className="inline-flex items-center gap-2 rounded-full bg-[var(--text)] px-4 py-2 text-sm font-bold text-white"
               >
                 <ExternalLink className="h-4 w-4" />

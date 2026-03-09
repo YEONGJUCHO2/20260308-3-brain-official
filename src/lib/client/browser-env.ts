@@ -27,3 +27,21 @@ export function buildChromeIntentUrl(currentUrl: string) {
   const path = `${parsed.host}${parsed.pathname}${parsed.search}${parsed.hash}`;
   return `intent://${path.replace(/^\/+/, "")}#Intent;scheme=${parsed.protocol.replace(":", "")};package=com.android.chrome;end`;
 }
+
+export async function handoffToExternalBrowser(currentUrl: string) {
+  if (typeof window === "undefined") {
+    return "unsupported" as const;
+  }
+
+  if (isAndroidUserAgent()) {
+    window.location.href = buildChromeIntentUrl(currentUrl);
+    return "opened" as const;
+  }
+
+  try {
+    await navigator.clipboard.writeText(currentUrl);
+    return "copied" as const;
+  } catch {
+    return "unsupported" as const;
+  }
+}

@@ -5,6 +5,7 @@ import { LogIn, LogOut } from "lucide-react";
 import type { User } from "firebase/auth";
 
 import { signInWithGoogle, signOutFromFirebase } from "@/lib/auth";
+import { handoffToExternalBrowser, isEmbeddedInAppBrowser, isIosUserAgent } from "@/lib/client/browser-env";
 import { getFirebaseAuth } from "@/lib/firebase";
 
 function getAuthErrorMessage(error: unknown, isLogout: boolean) {
@@ -78,6 +79,18 @@ export function AuthActionButton() {
         if (user) {
           await signOutFromFirebase();
           return;
+        }
+
+        if (isEmbeddedInAppBrowser()) {
+          const result = await handoffToExternalBrowser(window.location.href);
+          if (result === "copied" && isIosUserAgent()) {
+            window.alert("링크를 복사했습니다. Safari에서 붙여넣어 다시 열면 Google 로그인이 됩니다.");
+            return;
+          }
+
+          if (result === "opened") {
+            return;
+          }
         }
 
         await signInWithGoogle();
