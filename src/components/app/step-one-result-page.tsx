@@ -63,8 +63,8 @@ function CharacterDetailModal({
   onClose: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-30 flex items-end bg-[rgba(17,17,30,0.45)] p-4 backdrop-blur-sm sm:items-center sm:justify-center">
-      <div className="w-full max-w-md rounded-[2rem] bg-white p-6 shadow-[var(--shadow-strong)]">
+    <div className="fixed inset-0 z-30 flex items-end overflow-y-auto bg-[rgba(17,17,30,0.45)] p-4 backdrop-blur-sm sm:items-center sm:justify-center">
+      <div className="max-h-[calc(100vh-2rem)] w-full max-w-md overflow-y-auto rounded-[2rem] bg-white p-6 shadow-[var(--shadow-strong)]">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[var(--pink)]">
@@ -152,6 +152,7 @@ export function StepOneResultPage() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedCharacter, setSelectedCharacter] = useState<Step1TopCharacter | null>(null);
+  const [selectedRadarIndex, setSelectedRadarIndex] = useState(0);
 
   const loadResult = useCallback(async () => {
     setIsLoading(true);
@@ -188,6 +189,19 @@ export function StepOneResultPage() {
 
   const first = data?.top3[0];
   const rest = data?.top3.slice(1) ?? [];
+  const selectedRadarPoint = data?.radar_scores[selectedRadarIndex] ?? null;
+  const selectedRadarBreakdown =
+    data?.bias_breakdown.find((item) => item.bias_key === selectedRadarPoint?.bias_key) ?? null;
+
+  useEffect(() => {
+    if (!data?.radar_scores.length) {
+      return;
+    }
+
+    if (selectedRadarIndex >= data.radar_scores.length) {
+      setSelectedRadarIndex(0);
+    }
+  }, [data, selectedRadarIndex]);
 
   async function handlePrimaryShare() {
     await shareLink({
@@ -339,22 +353,60 @@ export function StepOneResultPage() {
                       읽는 법
                     </p>
                     <p className="mt-3 text-[1.06rem] leading-8 text-[var(--muted)]">
-                      꼭짓점 라벨에는 편향 캐릭터 이름과 점수를 함께 표시했습니다. 5점 아래는 약하게 드러난 편, 7점 안팎은 반복적으로 드러나는 편으로 보면 됩니다.
+                      차트 바깥 숫자 버튼이 아래 범례와 연결됩니다. 숫자를 누르면 해당 편향 설명과 점수를 바로 확인할 수 있습니다.
                     </p>
                   </div>
 
                   <div className="mx-auto mt-6 aspect-square max-w-[360px]">
-                    <RadarChart points={data.radar_scores} showLabels />
+                    <RadarChart
+                      points={data.radar_scores}
+                      showLabels
+                      activeIndex={selectedRadarIndex}
+                      onSelectIndex={setSelectedRadarIndex}
+                    />
                   </div>
+
+                  {selectedRadarPoint && selectedRadarBreakdown ? (
+                    <div className="mt-5 rounded-[1.5rem] border border-[rgba(239,63,143,0.14)] bg-white/92 p-4 shadow-[var(--shadow-soft)]">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="min-w-0">
+                          <p className="text-sm font-black uppercase tracking-[0.18em] text-[var(--pink)]">
+                            선택한 꼭짓점
+                          </p>
+                          <h4 className="mt-2 break-keep text-[1.15rem] font-black tracking-[-0.04em] text-[var(--text)]">
+                            {selectedRadarIndex + 1}. {selectedRadarPoint.label}
+                          </h4>
+                          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                            {selectedRadarBreakdown.summary}
+                          </p>
+                        </div>
+                        <div className="shrink-0 rounded-full bg-[rgba(239,63,143,0.1)] px-3 py-2 text-sm font-black text-[var(--pink)]">
+                          {selectedRadarPoint.display_score.toFixed(1)}/10
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
 
                   <div className="mt-6 grid gap-3">
                     {data.radar_scores.map((point, index) => (
-                      <div
+                      <button
                         key={point.bias_key}
-                        className="flex items-center justify-between gap-4 rounded-[1.2rem] border border-[rgba(224,216,235,0.95)] bg-white/92 px-4 py-3 shadow-[var(--shadow-soft)]"
+                        type="button"
+                        onClick={() => setSelectedRadarIndex(index)}
+                        className={`flex items-center justify-between gap-4 rounded-[1.2rem] border px-4 py-3 text-left shadow-[var(--shadow-soft)] transition ${
+                          selectedRadarIndex === index
+                            ? "border-[rgba(239,63,143,0.28)] bg-[rgba(255,244,249,0.98)]"
+                            : "border-[rgba(224,216,235,0.95)] bg-white/92"
+                        }`}
                       >
                         <div className="flex min-w-0 items-center gap-3">
-                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[rgba(239,63,143,0.1)] text-sm font-black text-[var(--pink)]">
+                          <span
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${
+                              selectedRadarIndex === index
+                                ? "bg-[var(--pink)] text-white"
+                                : "bg-[rgba(239,63,143,0.1)] text-[var(--pink)]"
+                            }`}
+                          >
                             {index + 1}
                           </span>
                           <p className="break-keep text-[0.98rem] font-black leading-6 text-[var(--text)]">
@@ -364,7 +416,7 @@ export function StepOneResultPage() {
                         <p className="shrink-0 text-sm font-black text-[var(--pink)]">
                           {point.display_score.toFixed(1)}/10
                         </p>
-                      </div>
+                      </button>
                     ))}
                   </div>
 
