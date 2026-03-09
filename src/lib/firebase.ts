@@ -16,9 +16,9 @@ const firebaseConfig = {
 export function hasFirebaseClientConfig() {
   return Boolean(
     firebaseConfig.apiKey &&
-    firebaseConfig.authDomain &&
-    firebaseConfig.projectId &&
-    firebaseConfig.appId,
+      firebaseConfig.authDomain &&
+      firebaseConfig.projectId &&
+      firebaseConfig.appId,
   );
 }
 
@@ -43,7 +43,11 @@ export async function getFirebaseAuth() {
   }
 
   if (!authPromise) {
-    authPromise = import("firebase/auth").then(({ getAuth }) => getAuth(app));
+    authPromise = import("firebase/auth").then(async ({ getAuth, setPersistence, browserLocalPersistence }) => {
+      const auth = getAuth(app);
+      await setPersistence(auth, browserLocalPersistence);
+      return auth;
+    });
   }
 
   return authPromise;

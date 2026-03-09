@@ -5,7 +5,11 @@ import { LogIn, LogOut } from "lucide-react";
 import type { User } from "firebase/auth";
 
 import { signInWithGoogle, signOutFromFirebase } from "@/lib/auth";
-import { handoffToExternalBrowser, isEmbeddedInAppBrowser, isIosUserAgent } from "@/lib/client/browser-env";
+import {
+  handoffToExternalBrowser,
+  isEmbeddedInAppBrowser,
+  isIosUserAgent,
+} from "@/lib/client/browser-env";
 import { getFirebaseAuth } from "@/lib/firebase";
 
 function getAuthErrorMessage(error: unknown, isLogout: boolean) {
@@ -56,7 +60,19 @@ export function AuthActionButton() {
         return;
       }
 
-      void import("firebase/auth").then(({ onAuthStateChanged }) => {
+      void import("firebase/auth").then(async ({ getRedirectResult, onAuthStateChanged }) => {
+        try {
+          const redirectResult = await getRedirectResult(auth);
+          if (redirectResult?.user && isMounted) {
+            setUser(redirectResult.user);
+          }
+        } catch (error) {
+          console.error("Failed to finalize Firebase redirect sign-in:", error);
+          if (isMounted) {
+            window.alert(getAuthErrorMessage(error, false));
+          }
+        }
+
         if (!isMounted) {
           return;
         }
