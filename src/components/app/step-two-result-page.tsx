@@ -31,19 +31,42 @@ const lensToneMap = {
 function collectHighlightTerms(tag: string, body: string) {
   const terms = new Set<string>();
   const normalizedTag = tag.replace(/\s*성향$/, "").trim();
+  const normalizedBody = body.replace(/\s+/g, " ").trim();
+  const stopTerms = new Set([
+    "실제 나의 상황",
+    "몇 가지",
+    "주의 깊게",
+    "판단하게",
+    "유도할 수",
+    "있습니다",
+  ]);
 
   if (normalizedTag.length >= 2) {
     terms.add(normalizedTag);
   }
 
-  for (const match of body.matchAll(/["'“”‘’]([^"'“”‘’]{2,30})["'“”‘’]/g)) {
+  for (const match of normalizedBody.matchAll(/["'“”‘’「」『』《》〈〉]([^"'“”‘’「」『』《》〈〉]{2,30})["'“”‘’「」『』《》〈〉]/g)) {
     const term = match[1]?.trim();
     if (term) {
       terms.add(term);
     }
   }
 
-  return Array.from(terms).sort((left, right) => right.length - left.length);
+  for (const match of normalizedBody.matchAll(/([가-힣A-Za-z0-9][가-힣A-Za-z0-9\s]{2,24}?)(?=(?:은|는|이|가|을|를|와|과|처럼|으로|로|에서|보다))/g)) {
+    const term = match[1]?.trim();
+    if (!term || stopTerms.has(term)) {
+      continue;
+    }
+
+    if (term.length >= 3 && term.length <= 18) {
+      terms.add(term);
+    }
+  }
+
+  return Array.from(terms)
+    .filter((term) => normalizedBody.includes(term))
+    .sort((left, right) => right.length - left.length)
+    .slice(0, 3);
 }
 
 function HighlightedParagraph({
@@ -59,8 +82,13 @@ function HighlightedParagraph({
     return <p className="mt-4 text-[0.98rem] leading-7 text-[#835640]">{text}</p>;
   }
 
+  const matchingTerms = terms.filter((term) => text.includes(term));
+  if (matchingTerms.length === 0) {
+    return <p className="mt-4 text-[0.98rem] leading-7 text-[#835640]">{text}</p>;
+  }
+
   const pattern = new RegExp(
-    `(${terms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+    `(${matchingTerms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
     "g",
   );
   const chunks = text.split(pattern);
@@ -72,7 +100,7 @@ function HighlightedParagraph({
   return (
     <p className="mt-4 text-[0.98rem] leading-7 text-[#835640]">
       {chunks.map((chunk, index) =>
-        terms.includes(chunk) ? (
+        matchingTerms.includes(chunk) ? (
           <span
             key={`${chunk}-${index}`}
             className={`mx-[1px] inline rounded-md px-1.5 py-0.5 font-black ring-1 ${highlightClass}`}

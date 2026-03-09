@@ -48,6 +48,18 @@ function getOuterBadgePlacement(angle: number, x: number, y: number) {
   };
 }
 
+function getFivePointBadgePlacement(index: number) {
+  const placements = [
+    { left: "50%", top: "11%", transform: "translate(-50%, -50%)" },
+    { left: "86%", top: "35%", transform: "translate(-50%, -50%)" },
+    { left: "72%", top: "84%", transform: "translate(-50%, -50%)" },
+    { left: "28%", top: "84%", transform: "translate(-50%, -50%)" },
+    { left: "14%", top: "35%", transform: "translate(-50%, -50%)" },
+  ] as const;
+
+  return placements[index];
+}
+
 export function RadarChart({
   points,
   compact = false,
@@ -139,7 +151,10 @@ export function RadarChart({
         ? points.map((point, index) => {
             const angle = (360 / total) * index;
             const outerPoint = polarToCartesian(angle, outerRadius + (compact ? 5 : 10));
-            const outerPlacement = getOuterBadgePlacement(angle, outerPoint.x, outerPoint.y);
+            const outerPlacement =
+              total === 5
+                ? getFivePointBadgePlacement(index)
+                : getOuterBadgePlacement(angle, outerPoint.x, outerPoint.y);
 
             return (
               <div key={`${point.label}-label`}>
