@@ -1,6 +1,6 @@
 # 뇌피셜 — 태스크 체크리스트
 
-> Last Updated: 2026-03-07
+> Last Updated: 2026-03-09
 
 ## UI handoff 반영 (Stitch 기준)
 
@@ -142,7 +142,9 @@
   - 잘못된 입력과 JSON 파싱 실패 fallback 검증
 - [ ] **5-2** E2E 플로우 테스트 `[M]`
 - [ ] **5-3** 모바일 반응형 최적화 `[M]`
-- [ ] **5-4** Lighthouse 성능 최적화 (90+) + Firebase App Hosting 배포 `[S]`
+- [x] **5-4** Lighthouse 성능 최적화 (90+) + Vercel 배포 `[S]`
+  - 프로덕션 배포 URL: `https://brain-official.vercel.app`
+  - Firebase Auth Authorized Domains에 `brain-official.vercel.app` 추가 완료
 
 ## Post-MVP (V1.1): 결제 전환
 

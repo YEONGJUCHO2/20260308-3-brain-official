@@ -1,8 +1,8 @@
 # 뇌피셜 — 핵심 컨텍스트
 
-> Last Updated: 2026-03-07
+> Last Updated: 2026-03-09
 
-## 현재 상태: Phase 0-1 진행 중 (Next.js 프로젝트 이동 필요)
+## 현재 상태: Vercel 프로덕션 배포 전환 완료
 
 ### UI 상태 업데이트
 - `C:\projects\3-brain-official\stitch\`에 Stitch 최종 산출물 정리 완료
@@ -12,34 +12,17 @@
 - **참고만 하고 직접 구현:** step_1_chat, step_2_input, full_report
 - **제외:** generic `share_card`
 
-### ⚠️ 즉시 필요한 작업 (Handoff)
-**`c:/projects/brain-temp/`에 Next.js 15 프로젝트가 생성되어 있음 → `c:/projects/3-brain-official/`로 파일 이동 필요**
+### 배포 상태
+- Vercel 프로덕션 배포 완료: `https://brain-official.vercel.app`
+- Firebase Auth Authorized Domains에 `brain-official.vercel.app` 추가 완료
+- Firebase는 호스팅이 아니라 **Auth + Firestore + 웹앱 설정** 용도로 유지
+- Firebase App Hosting backend는 더 이상 주 배포 경로로 보지 않음
 
-실행할 명령어:
-```bash
-# 1. brain-temp의 파일들을 3-brain-official로 복사 (기존 dev/, 기획서, .claude/ 보존)
-cp -r c:/projects/brain-temp/* c:/projects/3-brain-official/
-cp c:/projects/brain-temp/.gitignore c:/projects/3-brain-official/
-# (brain-temp의 .git은 복사하지 않음 — 0-3에서 새로 init)
-
-# 2. 정상 구동 확인
-cd c:/projects/3-brain-official && npm run dev
-
-# 3. 임시 폴더 삭제
-rm -rf c:/projects/brain-temp
-```
-
-### 왜 임시 폴더를 썼는가
-- `create-next-app`이 기존 파일(dev/, 기획서, .claude/)과 충돌하여 `.`에 직접 생성 불가
-- `brain-temp`에 생성 후 파일만 옮기는 전략 선택
-
-### 현재 구현 블로커
-- 현재 워크스페이스에는 아직 `package.json`, `src/`, `app/`이 없음
-- 따라서 코드 구현보다 먼저 앱 소스 이관이 필요
-- 문서 기준 다음 우선순위는 아래 3개
-  1. 앱 소스 이관 + 로컬 실행 확인
-  2. Step 1/2 타입 + 런타임 검증 스키마 고정
-  3. `scoring.ts` 테스트와 API contract 테스트 선행
+### 현재 운영 메모
+- App Hosting에서 겪었던 PEM/IAM/Firestore 권한 이슈를 피하기 위해 Vercel로 전환
+- Vercel 프로젝트: `yeongju-chos-projects/brain-official`
+- 배포 기준 도메인: `brain-official.vercel.app`
+- Firebase App Hosting 관련 문서는 과거 기록으로만 유지하고, 신규 작업은 Vercel 기준으로 판단
 
 ## Key Files
 
@@ -65,7 +48,7 @@ rm -rf c:/projects/brain-temp
 - **사용자당 비용:** ~$0.004 (약 6원)
 
 ### 2. DB: Firebase Firestore
-- 서버리스, Firebase 올인 (Auth + Firestore + App Hosting)
+- 서버리스, Firebase 유지 (Auth + Firestore)
 - Firebase MCP로 통합 관리
 - **컬렉션:** `users/{uid}`, `users/{uid}/diagnoses/{id}`, `users/{uid}/analyses/{id}`, `anonymousSessions/{sessionId}` (서버 전용)
 
@@ -94,13 +77,15 @@ rm -rf c:/projects/brain-temp
 - Gemini 모델명 .env로 관리 → 코드 수정 없이 교체
 - `schemaVersion`을 `anonymousSessions`, `diagnoses`, `analyses`에 우선 적용
 - 테스트 우선순위는 `scoring.ts` 단위 테스트 → API contract 테스트 → E2E
+- Vercel env와 Firebase Auth Authorized Domains 변경 시 문서 같이 갱신
 
 ## Dependencies (External)
 
 | 서비스 | 용도 | 필요 키 |
 |--------|------|---------|
 | Google AI Studio | Gemini API | `GEMINI_API_KEY` |
-| Firebase | Auth + Firestore + App Hosting | `FIREBASE_*` (MCP) |
+| Firebase | Auth + Firestore | `FIREBASE_*` |
+| Vercel | Next.js 호스팅 | `VERCEL_*` (managed) |
 | Kakao Developers | 공유 API | `KAKAO_JS_KEY` |
 
 ## Architecture

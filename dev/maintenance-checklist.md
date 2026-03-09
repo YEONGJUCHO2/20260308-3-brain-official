@@ -1,6 +1,6 @@
 # 뇌피셜 유지보수 체크리스트
 
-> Last Updated: 2026-03-06
+> Last Updated: 2026-03-09
 > Scope: 운영 점검, 배포 전 확인, 프롬프트 변경 관리, 장애 대응
 
 이 문서는 `docs/뇌피셜_개발자_가이드.md`의 유지보수 원칙을 실제 운영 체크리스트로 풀어쓴 문서입니다.  
@@ -87,6 +87,8 @@
 - [ ] `.env` 또는 서버 설정값 변경 내용 확인
 - [ ] 모델명 변경 시 fallback 모델 준비 여부 확인
 - [ ] quota, TTL, feature flag 값이 의도대로 반영됐는지 확인
+- [ ] Vercel production env와 로컬 `.env.local` 차이 확인
+- [ ] Firebase Auth Authorized Domains에 현재 배포 도메인 포함 여부 확인
 
 ---
 
@@ -164,6 +166,7 @@
 - `dev/active/brain-official/brain-official-context.md`
 - 프롬프트 변경 시: `src/lib/prompts/*.ts` 변경 내역
 - 스키마 변경 시: `src/types/*.ts` 및 서버 검증 로직
+- 배포 기준 변경 시: Vercel 프로젝트 설정 및 Firebase Auth 도메인 설정
 
 ---
 

@@ -1,6 +1,6 @@
 # 뇌피셜 (Brain-fficial) — 종합 개발 계획
 
-> Last Updated: 2026-03-07
+> Last Updated: 2026-03-09
 
 ## Executive Summary
 
@@ -27,7 +27,7 @@
 - Next.js 15 기반 풀스택 웹앱
 - Gemini 2.5 Flash-Lite (Step 1) + Flash (Step 2) AI 엔진
 - Firebase Auth + Firestore 기반 인증/저장
-- Firebase App Hosting 배포 + 카카오톡 공유 바이럴 루프
+- Vercel 배포 + 카카오톡 공유 바이럴 루프
 - 모바일 퍼스트 반응형 디자인
 - 프롬프트/응답 스키마/운영 로그 중심 유지보수 체계
 
@@ -90,7 +90,7 @@
 | 5-1 | API contract 테스트 | M | 1-0, 1-1~1-3 | 주요 요청/응답 회귀 방지 |
 | 5-2 | 핵심 플로우 E2E 테스트 | M | 전체 | 주요 경로 통과 |
 | 5-3 | 모바일 최적화 | M | 2-1~2-5 | 주요 기기 정상 |
-| 5-4 | 성능 최적화 + Firebase App Hosting 배포 | S | 전체 | Lighthouse 90+ |
+| 5-4 | 성능 최적화 + Vercel 프로덕션 배포 | S | 전체 | Lighthouse 90+ |
 
 ---
 
@@ -132,7 +132,7 @@
 | 차트 | Chart.js (레이더 차트) |
 | 카드 생성 | html2canvas |
 | 공유 | 카카오톡 공유 API |
-| 호스팅 | Firebase App Hosting |
+| 호스팅 | Vercel |
 
 ---
 
